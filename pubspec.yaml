@@ -1,0 +1,58 @@
+name: tinysteps
+description: "TinySteps — Smart DayCare Management App for children aged 0-5 years."
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+    uses-material-design: true
+
+  # Fonts
+  google_fonts: ^6.2.1
+
+  # Supabase — backend, auth, database, storage
+  supabase_flutter: ^2.8.4
+
+  # Navigation
+  go_router: ^14.6.3
+
+  # State management
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.4.1
+
+  # Environment variables
+  flutter_dotenv: ^5.2.1
+
+  # Utilities
+  intl: ^0.19.0
+  package_info_plus: ^9.0.1
+
+  # calendar
+  table_calendar: ^3.1.1
+  url_launcher: ^6.3.2
+
+  # Push Notifications (OneSignal)
+  onesignal_flutter: ^5.2.2
+
+  # Image picker for profile photos
+  image_picker: ^1.0.7
+
+  # Cupertino Icons
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.4.13
+  riverpod_generator: ^2.4.3
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env
+    - assets/images/
