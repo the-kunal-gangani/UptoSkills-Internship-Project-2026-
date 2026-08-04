@@ -5,7 +5,7 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:tinysteps/controllers/staff_schedule_controller.dart';
 import 'package:tinysteps/core/constants/app_theme.dart';
 import 'package:tinysteps/core/theme/theme_ext.dart';
-import 'package:tinysteps/views/staff/widgets/emergency_dialer_overlay.dart';
+import 'package:tinysteps/views/tinysteps/staff/widgets/emergency_dialer_overlay.dart';
 
 class MyScheduleScreen extends ConsumerStatefulWidget {
   const MyScheduleScreen({super.key});

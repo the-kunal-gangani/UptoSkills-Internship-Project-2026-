@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../Controllers/parent_approval_controller.dart';
-import '../../../core/constants/app_theme.dart';
-import '../../../core/theme/theme_ext.dart';
+import '../../../../Controllers/parent_approval_controller.dart';
+import '../../../../core/constants/app_theme.dart';
+import '../../../../core/theme/theme_ext.dart';
 import 'parent_details_bottomsheet.dart';
 
 class PendingParentsScreen extends ConsumerWidget {

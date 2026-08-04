@@ -5,40 +5,40 @@ import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 // Auth
-import 'package:tinysteps/views/auth/screens/login_screen.dart';
-import 'package:tinysteps/views/auth/screens/register_screen.dart';
-import 'package:tinysteps/views/auth/screens/forgot_pass_screen.dart';
-import 'package:tinysteps/views/auth/screens/change_password_screen.dart';
-import 'package:tinysteps/views/admin/screens/pending_approval_screen.dart';
+import 'package:tinysteps/views/tinysteps/auth/screens/login_screen.dart';
+import 'package:tinysteps/views/tinysteps/auth/screens/register_screen.dart';
+import 'package:tinysteps/views/tinysteps/auth/screens/forgot_pass_screen.dart';
+import 'package:tinysteps/views/tinysteps/auth/screens/change_password_screen.dart';
+import 'package:tinysteps/views/tinysteps/admin/screens/pending_approval_screen.dart';
 
 // Parent
-import 'package:tinysteps/views/parent/screens/parent_home_screen.dart';
-import 'package:tinysteps/views/parent/screens/my_children_screen.dart';
-import 'package:tinysteps/views/parent/screens/add_child_screen.dart';
-import 'package:tinysteps/views/parent/screens/child_profile_screen.dart';
-import 'package:tinysteps/views/parent/screens/attendance_history_screen.dart';
-import 'package:tinysteps/views/parent/screens/book_session_screen.dart';
-import 'package:tinysteps/views/parent/screens/booking_confirmation_screen.dart';
-import 'package:tinysteps/views/parent/screens/my_sessions_screen.dart';
-import 'package:tinysteps/views/parent/screens/child_insights_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/parent_home_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/my_children_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/add_child_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/child_profile_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/attendance_history_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/book_session_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/booking_confirmation_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/my_sessions_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/child_insights_screen.dart';
 import 'package:tinysteps/Models/session_booking_model.dart';
 
 // Staff
-import 'package:tinysteps/views/staff/screens/attendance_screen.dart';
-import 'package:tinysteps/views/staff/screens/child_detail_screen.dart';
-import 'package:tinysteps/views/staff/screens/my_classroom_screen.dart';
-import 'package:tinysteps/views/staff/screens/teacher_faq_screen.dart';
-import 'package:tinysteps/views/staff/screens/teacher_home_screen.dart';
-import 'package:tinysteps/views/staff/screens/my_schedule_screen.dart';
-import 'package:tinysteps/views/staff/screens/growth_form_screen.dart';
-import 'package:tinysteps/views/staff/screens/teacher_availability_screen.dart';
-import 'package:tinysteps/views/staff/screens/teacher_leave_screen.dart';
+import 'package:tinysteps/views/tinysteps/staff/screens/attendance_screen.dart';
+import 'package:tinysteps/views/tinysteps/staff/screens/child_detail_screen.dart';
+import 'package:tinysteps/views/tinysteps/staff/screens/my_classroom_screen.dart';
+import 'package:tinysteps/views/tinysteps/staff/screens/teacher_faq_screen.dart';
+import 'package:tinysteps/views/tinysteps/staff/screens/teacher_home_screen.dart';
+import 'package:tinysteps/views/tinysteps/staff/screens/my_schedule_screen.dart';
+import 'package:tinysteps/views/tinysteps/staff/screens/growth_form_screen.dart';
+import 'package:tinysteps/views/tinysteps/staff/screens/teacher_availability_screen.dart';
+import 'package:tinysteps/views/tinysteps/staff/screens/teacher_leave_screen.dart';
 
 // Admin
-import 'package:tinysteps/views/admin/screens/admin_home_screen.dart';
-import 'package:tinysteps/views/admin/screens/privacy_policy_screen.dart';
-import 'package:tinysteps/views/admin/screens/sessions_screen.dart';
-import 'package:tinysteps/views/admin/screens/add_staff_screen.dart';
+import 'package:tinysteps/views/tinysteps/admin/screens/admin_home_screen.dart';
+import 'package:tinysteps/views/tinysteps/admin/screens/privacy_policy_screen.dart';
+import 'package:tinysteps/views/tinysteps/admin/screens/sessions_screen.dart';
+import 'package:tinysteps/views/tinysteps/admin/screens/add_staff_screen.dart';
 
 // Core
 import 'package:tinysteps/core/screens/notifications_screen.dart';

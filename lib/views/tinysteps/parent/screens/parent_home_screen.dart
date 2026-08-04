@@ -3,11 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tinysteps/controllers/alert_controller.dart';
 import 'package:tinysteps/core/widgets/active_alert_dialog.dart';
 import 'package:tinysteps/core/widgets/bottom_nav_bar.dart';
-import 'package:tinysteps/views/parent/screens/analytics_screen.dart';
-import 'package:tinysteps/views/parent/screens/feed_screen.dart';
-import 'package:tinysteps/views/parent/screens/parent_profile_screen.dart';
-import 'package:tinysteps/views/parent/screens/safety_screen.dart';
-import 'package:tinysteps/views/parent/screens/my_sessions_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/analytics_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/feed_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/parent_profile_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/safety_screen.dart';
+import 'package:tinysteps/views/tinysteps/parent/screens/my_sessions_screen.dart';
 
 class ParentHomeScreen extends ConsumerStatefulWidget {
   const ParentHomeScreen({super.key});
