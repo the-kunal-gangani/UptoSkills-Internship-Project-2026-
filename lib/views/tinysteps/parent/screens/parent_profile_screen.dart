@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tinysteps/Controllers/parent_profile_controller.dart';
-import 'package:tinysteps/Views/auth/screens/change_password_screen.dart';
+import 'package:tinysteps/Views/tinysteps/auth/screens/change_password_screen.dart';
 import 'package:tinysteps/core/constants/app_theme.dart';
 import 'package:tinysteps/core/theme/theme_ext.dart';
 import 'package:tinysteps/core/widgets/logout_dialog.dart';

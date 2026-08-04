@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tinysteps/controllers/admin_users_controller.dart';
 import 'package:tinysteps/core/constants/app_theme.dart';
 import 'package:tinysteps/core/theme/theme_ext.dart';
-import 'package:tinysteps/Views/admin/screens/pending_parents_screen.dart';
+import 'package:tinysteps/Views/tinysteps/admin/screens/pending_parents_screen.dart';
 
 class UsersScreen extends ConsumerWidget {
   const UsersScreen({super.key});
@@ -60,7 +60,8 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
           backgroundColor: context.colors.bgLight,
           surfaceTintColor: Colors.transparent,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(AppRadius.xl)),
+            borderRadius: BorderRadius.circular(AppRadius.xl),
+          ),
           title: Row(
             children: [
               Container(
@@ -69,8 +70,11 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                   color: context.colors.primary.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(AppRadius.sm),
                 ),
-                child: Icon(Icons.person_add_outlined,
-                    color: context.colors.primary, size: 20),
+                child: Icon(
+                  Icons.person_add_outlined,
+                  color: context.colors.primary,
+                  size: 20,
+                ),
               ),
               const SizedBox(width: AppSpacing.md),
               Text('Add Staff', style: context.textStyles.heading3),
@@ -134,8 +138,11 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                     decoration: InputDecoration(
                       labelText: 'Password',
                       labelStyle: context.textStyles.labelMedium,
-                      prefixIcon: Icon(Icons.lock_outline,
-                          color: context.colors.primary, size: 20),
+                      prefixIcon: Icon(
+                        Icons.lock_outline,
+                        color: context.colors.primary,
+                        size: 20,
+                      ),
                       suffixIcon: IconButton(
                         icon: Icon(
                           obscurePass
@@ -160,10 +167,14 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                       focusedBorder: OutlineInputBorder(
                         borderRadius: AppRadius.inputRadius,
                         borderSide: BorderSide(
-                            color: context.colors.primary, width: 2),
+                          color: context.colors.primary,
+                          width: 2,
+                        ),
                       ),
                       contentPadding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.md, vertical: AppSpacing.sm),
+                        horizontal: AppSpacing.md,
+                        vertical: AppSpacing.sm,
+                      ),
                     ),
                   ),
                 ],
@@ -173,17 +184,23 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
           actions: [
             TextButton(
               onPressed: isSaving ? null : () => Navigator.pop(ctx),
-              child: Text('Cancel',
-                  style: context.textStyles.labelBold
-                      .copyWith(color: context.colors.textMuted)),
+              child: Text(
+                'Cancel',
+                style: context.textStyles.labelBold.copyWith(
+                  color: context.colors.textMuted,
+                ),
+              ),
             ),
             FilledButton(
               style: FilledButton.styleFrom(
                 backgroundColor: context.colors.primary,
                 shape: RoundedRectangleBorder(
-                    borderRadius: AppRadius.buttonRadius),
+                  borderRadius: AppRadius.buttonRadius,
+                ),
                 padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.lg, vertical: AppSpacing.sm),
+                  horizontal: AppSpacing.lg,
+                  vertical: AppSpacing.sm,
+                ),
               ),
               onPressed: isSaving
                   ? null
@@ -203,14 +220,18 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
 
                       if (ctx.mounted) {
                         Navigator.pop(ctx);
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text(ok
-                              ? 'Staff account created successfully'
-                              : 'Failed to create staff. Try again.'),
-                          backgroundColor: ok
-                              ? context.colors.success
-                              : context.colors.danger,
-                        ));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              ok
+                                  ? 'Staff account created successfully'
+                                  : 'Failed to create staff. Try again.',
+                            ),
+                            backgroundColor: ok
+                                ? context.colors.success
+                                : context.colors.danger,
+                          ),
+                        );
                       }
                     },
               child: isSaving
@@ -218,10 +239,11 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                       width: 18,
                       height: 18,
                       child: CircularProgressIndicator(
-                          strokeWidth: 2, color: Colors.white),
+                        strokeWidth: 2,
+                        color: Colors.white,
+                      ),
                     )
-                  : Text('Create Staff',
-                      style: context.textStyles.buttonLabel),
+                  : Text('Create Staff', style: context.textStyles.buttonLabel),
             ),
           ],
         ),
@@ -267,11 +289,12 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                     const SizedBox(width: 6),
                     Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 6, vertical: 2),
+                        horizontal: 6,
+                        vertical: 2,
+                      ),
                       decoration: BoxDecoration(
                         color: context.colors.warning,
-                        borderRadius:
-                            BorderRadius.circular(AppRadius.full),
+                        borderRadius: BorderRadius.circular(AppRadius.full),
                       ),
                       child: Text(
                         '$pendingCount',
@@ -295,9 +318,12 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
               onPressed: () => _showAddStaffDialog(context, ctrl),
               backgroundColor: context.colors.primary,
               icon: const Icon(Icons.person_add_outlined, color: Colors.white),
-              label: Text('Add Staff',
-                  style: context.textStyles.labelBold
-                      .copyWith(color: Colors.white)),
+              label: Text(
+                'Add Staff',
+                style: context.textStyles.labelBold.copyWith(
+                  color: Colors.white,
+                ),
+              ),
             )
           : null,
       body: TabBarView(
@@ -319,7 +345,8 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
   ) {
     if (state.isLoadingTeachers) {
       return Center(
-          child: CircularProgressIndicator(color: context.colors.primary));
+        child: CircularProgressIndicator(color: context.colors.primary),
+      );
     }
     if (state.teachers.isEmpty) {
       return Center(
@@ -328,15 +355,19 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.group_outlined,
-                  size: 64,
-                  color: context.colors.primary.withValues(alpha: 0.4)),
+              Icon(
+                Icons.group_outlined,
+                size: 64,
+                color: context.colors.primary.withValues(alpha: 0.4),
+              ),
               const SizedBox(height: AppSpacing.md),
               Text('No staff yet', style: context.textStyles.heading3),
               const SizedBox(height: AppSpacing.sm),
-              Text('Tap "Add Staff" to create the first staff account.',
-                  style: context.textStyles.bodyMuted,
-                  textAlign: TextAlign.center),
+              Text(
+                'Tap "Add Staff" to create the first staff account.',
+                style: context.textStyles.bodyMuted,
+                textAlign: TextAlign.center,
+              ),
             ],
           ),
         ),
@@ -347,7 +378,11 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
       onRefresh: ctrl.loadTeachers,
       child: ListView.separated(
         padding: const EdgeInsets.fromLTRB(
-            AppSpacing.lg, AppSpacing.md, AppSpacing.lg, 100),
+          AppSpacing.lg,
+          AppSpacing.md,
+          AppSpacing.lg,
+          100,
+        ),
         itemCount: state.teachers.length,
         separatorBuilder: (_, _) => const SizedBox(height: AppSpacing.sm),
         itemBuilder: (context, index) {
@@ -377,34 +412,41 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
             ),
             child: ListTile(
               contentPadding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.lg, vertical: AppSpacing.xs),
+                horizontal: AppSpacing.lg,
+                vertical: AppSpacing.xs,
+              ),
               leading: CircleAvatar(
                 backgroundColor: context.colors.primaryLight,
                 child: Text(
                   (t['full_name'] as String? ?? 'T')[0].toUpperCase(),
-                  style: context.textStyles.labelBold
-                      .copyWith(color: context.colors.primary),
+                  style: context.textStyles.labelBold.copyWith(
+                    color: context.colors.primary,
+                  ),
                 ),
               ),
-              title: Text(t['full_name'] ?? 'Unknown',
-                  style: context.textStyles.labelBold),
-              subtitle: Builder(builder: (_) {
-                final classroomsData =
-                    t['classrooms'] as List<dynamic>? ?? [];
-                final classroomName = classroomsData.isNotEmpty
-                    ? classroomsData.first['name'] as String
-                    : 'No Group';
-                final parts = <String>[
-                  if (t['designation'] != null &&
-                      (t['designation'] as String).isNotEmpty)
-                    t['designation'] as String,
-                  classroomName,
-                ];
-                return Text(
-                  parts.isEmpty ? 'No details provided' : parts.join('  ·  '),
-                  style: context.textStyles.bodySmall,
-                );
-              }),
+              title: Text(
+                t['full_name'] ?? 'Unknown',
+                style: context.textStyles.labelBold,
+              ),
+              subtitle: Builder(
+                builder: (_) {
+                  final classroomsData =
+                      t['classrooms'] as List<dynamic>? ?? [];
+                  final classroomName = classroomsData.isNotEmpty
+                      ? classroomsData.first['name'] as String
+                      : 'No Group';
+                  final parts = <String>[
+                    if (t['designation'] != null &&
+                        (t['designation'] as String).isNotEmpty)
+                      t['designation'] as String,
+                    classroomName,
+                  ];
+                  return Text(
+                    parts.isEmpty ? 'No details provided' : parts.join('  ·  '),
+                    style: context.textStyles.bodySmall,
+                  );
+                },
+              ),
               trailing: _StatusBadge(label: statusLabel, color: statusColor),
               onTap: () => _showTeacherDetail(context, ref, t, ctrl),
             ),
@@ -422,19 +464,25 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
   ) {
     if (state.isLoadingParents) {
       return Center(
-          child: CircularProgressIndicator(color: context.colors.primary));
+        child: CircularProgressIndicator(color: context.colors.primary),
+      );
     }
     if (state.parents.isEmpty) {
       return Center(
-          child: Text('No approved parents yet',
-              style: context.textStyles.bodyMuted));
+        child: Text(
+          'No approved parents yet',
+          style: context.textStyles.bodyMuted,
+        ),
+      );
     }
 
     return RefreshIndicator(
       onRefresh: ctrl.loadParents,
       child: ListView.separated(
         padding: const EdgeInsets.symmetric(
-            vertical: AppSpacing.md, horizontal: AppSpacing.lg),
+          vertical: AppSpacing.md,
+          horizontal: AppSpacing.lg,
+        ),
         itemCount: state.parents.length,
         separatorBuilder: (_, _) => const SizedBox(height: AppSpacing.sm),
         itemBuilder: (context, index) {
@@ -451,17 +499,22 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
             ),
             child: ListTile(
               contentPadding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.lg, vertical: AppSpacing.xs),
+                horizontal: AppSpacing.lg,
+                vertical: AppSpacing.xs,
+              ),
               leading: CircleAvatar(
                 backgroundColor: context.colors.secondaryLight,
                 child: Text(
                   (p['full_name'] as String? ?? 'P')[0].toUpperCase(),
-                  style: context.textStyles.labelBold
-                      .copyWith(color: context.colors.secondary),
+                  style: context.textStyles.labelBold.copyWith(
+                    color: context.colors.secondary,
+                  ),
                 ),
               ),
-              title: Text(p['full_name'] ?? 'Unknown',
-                  style: context.textStyles.labelBold),
+              title: Text(
+                p['full_name'] ?? 'Unknown',
+                style: context.textStyles.labelBold,
+              ),
               subtitle: Text(
                 '${p['phone'] ?? '—'}  ·  $childCount ${childCount == 1 ? 'child' : 'children'}',
                 style: context.textStyles.bodySmall,
@@ -515,18 +568,26 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
           backgroundColor: context.colors.bgLight,
           surfaceTintColor: Colors.transparent,
           contentPadding: const EdgeInsets.fromLTRB(
-              AppSpacing.lg, AppSpacing.md, AppSpacing.lg, AppSpacing.lg),
+            AppSpacing.lg,
+            AppSpacing.md,
+            AppSpacing.lg,
+            AppSpacing.lg,
+          ),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 CircleAvatar(
                   radius: 32,
-                  backgroundColor:
-                      context.colors.primary.withValues(alpha: 0.15),
-                  child: Text(initial,
-                      style: context.textStyles.heading1
-                          .copyWith(color: context.colors.primary)),
+                  backgroundColor: context.colors.primary.withValues(
+                    alpha: 0.15,
+                  ),
+                  child: Text(
+                    initial,
+                    style: context.textStyles.heading1.copyWith(
+                      color: context.colors.primary,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: AppSpacing.md),
                 Text(name, style: context.textStyles.heading3),
@@ -561,33 +622,40 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                     children: [
                       if (designation != null && designation.isNotEmpty) ...[
                         _DetailRow(
-                            icon: Icons.badge_outlined,
-                            label: 'Designation',
-                            value: designation),
+                          icon: Icons.badge_outlined,
+                          label: 'Designation',
+                          value: designation,
+                        ),
                         Divider(
-                            height: AppSpacing.lg,
-                            color: context.colors.border),
+                          height: AppSpacing.lg,
+                          color: context.colors.border,
+                        ),
                       ],
                       if (staffId != null && staffId.isNotEmpty) ...[
                         _DetailRow(
-                            icon: Icons.numbers,
-                            label: 'Staff ID',
-                            value: staffId),
+                          icon: Icons.numbers,
+                          label: 'Staff ID',
+                          value: staffId,
+                        ),
                         Divider(
-                            height: AppSpacing.lg,
-                            color: context.colors.border),
+                          height: AppSpacing.lg,
+                          color: context.colors.border,
+                        ),
                       ],
                       _DetailRow(
-                          icon: Icons.meeting_room_outlined,
-                          label: 'Group',
-                          value: currentClassroomName),
+                        icon: Icons.meeting_room_outlined,
+                        label: 'Group',
+                        value: currentClassroomName,
+                      ),
                       Divider(
-                          height: AppSpacing.lg,
-                          color: context.colors.border),
+                        height: AppSpacing.lg,
+                        color: context.colors.border,
+                      ),
                       _DetailRow(
-                          icon: Icons.email_outlined,
-                          label: 'Email',
-                          value: teacher['email'] as String? ?? '—'),
+                        icon: Icons.email_outlined,
+                        label: 'Email',
+                        value: teacher['email'] as String? ?? '—',
+                      ),
                     ],
                   ),
                 ),
@@ -601,9 +669,11 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                       style: FilledButton.styleFrom(
                         backgroundColor: context.colors.success,
                         padding: const EdgeInsets.symmetric(
-                            vertical: AppSpacing.sm),
+                          vertical: AppSpacing.sm,
+                        ),
                         shape: RoundedRectangleBorder(
-                            borderRadius: AppRadius.buttonRadius),
+                          borderRadius: AppRadius.buttonRadius,
+                        ),
                       ),
                       onPressed: () async {
                         final ok = await ctrl.approveTeacher(teacher['id']);
@@ -612,8 +682,10 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                           Navigator.pop(ctx);
                         }
                       },
-                      label: Text('Approve',
-                          style: context.textStyles.buttonLabel),
+                      label: Text(
+                        'Approve',
+                        style: context.textStyles.buttonLabel,
+                      ),
                     ),
                   )
                 else
@@ -625,9 +697,11 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                         foregroundColor: context.colors.warning,
                         side: BorderSide(color: context.colors.warning),
                         padding: const EdgeInsets.symmetric(
-                            vertical: AppSpacing.sm),
+                          vertical: AppSpacing.sm,
+                        ),
                         shape: RoundedRectangleBorder(
-                            borderRadius: AppRadius.buttonRadius),
+                          borderRadius: AppRadius.buttonRadius,
+                        ),
                       ),
                       onPressed: () async {
                         final ok = await ctrl.revokeTeacher(teacher['id']);
@@ -636,9 +710,12 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                           Navigator.pop(ctx);
                         }
                       },
-                      label: Text('Revoke Approval',
-                          style: context.textStyles.labelBold
-                              .copyWith(color: context.colors.warning)),
+                      label: Text(
+                        'Revoke Approval',
+                        style: context.textStyles.labelBold.copyWith(
+                          color: context.colors.warning,
+                        ),
+                      ),
                     ),
                   ),
                 const SizedBox(height: AppSpacing.sm),
@@ -648,36 +725,45 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                     width: double.infinity,
                     child: OutlinedButton.icon(
                       icon: Icon(
-                          isActive
-                              ? Icons.person_off_outlined
-                              : Icons.person_add_alt_1,
-                          size: 18),
+                        isActive
+                            ? Icons.person_off_outlined
+                            : Icons.person_add_alt_1,
+                        size: 18,
+                      ),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: isActive
                             ? context.colors.danger
                             : context.colors.success,
                         side: BorderSide(
-                            color: isActive
-                                ? context.colors.danger
-                                : context.colors.success),
+                          color: isActive
+                              ? context.colors.danger
+                              : context.colors.success,
+                        ),
                         padding: const EdgeInsets.symmetric(
-                            vertical: AppSpacing.sm),
+                          vertical: AppSpacing.sm,
+                        ),
                         shape: RoundedRectangleBorder(
-                            borderRadius: AppRadius.buttonRadius),
+                          borderRadius: AppRadius.buttonRadius,
+                        ),
                       ),
                       onPressed: () async {
                         final ok = await ctrl.toggleTeacherActive(
-                            teacher['id'], isActive);
+                          teacher['id'],
+                          isActive,
+                        );
                         if (ctx.mounted && ok) {
                           setDialogState(() => isActive = !isActive);
                           Navigator.pop(ctx);
                         }
                       },
-                      label: Text(isActive ? 'Deactivate' : 'Activate',
-                          style: context.textStyles.labelBold.copyWith(
-                              color: isActive
-                                  ? context.colors.danger
-                                  : context.colors.success)),
+                      label: Text(
+                        isActive ? 'Deactivate' : 'Activate',
+                        style: context.textStyles.labelBold.copyWith(
+                          color: isActive
+                              ? context.colors.danger
+                              : context.colors.success,
+                        ),
+                      ),
                     ),
                   ),
                 const SizedBox(height: AppSpacing.lg),
@@ -685,8 +771,10 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                 Text('Assign Group', style: context.textStyles.labelBold),
                 const SizedBox(height: AppSpacing.sm),
                 if (classrooms.isEmpty)
-                  Text('No groups available',
-                      style: context.textStyles.bodyMuted)
+                  Text(
+                    'No groups available',
+                    style: context.textStyles.bodyMuted,
+                  )
                 else ...[
                   DropdownButtonFormField<String>(
                     dropdownColor: context.colors.bgSurface,
@@ -694,18 +782,22 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                       filled: true,
                       fillColor: context.colors.bgSurface,
                       contentPadding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.md, vertical: AppSpacing.sm),
+                        horizontal: AppSpacing.md,
+                        vertical: AppSpacing.sm,
+                      ),
                       border: OutlineInputBorder(
-                          borderRadius: AppRadius.inputRadius,
-                          borderSide:
-                              BorderSide(color: context.colors.border)),
+                        borderRadius: AppRadius.inputRadius,
+                        borderSide: BorderSide(color: context.colors.border),
+                      ),
                       enabledBorder: OutlineInputBorder(
-                          borderRadius: AppRadius.inputRadius,
-                          borderSide:
-                              BorderSide(color: context.colors.border)),
+                        borderRadius: AppRadius.inputRadius,
+                        borderSide: BorderSide(color: context.colors.border),
+                      ),
                     ),
-                    hint: Text('Select classroom',
-                        style: context.textStyles.bodyMuted),
+                    hint: Text(
+                      'Select classroom',
+                      style: context.textStyles.bodyMuted,
+                    ),
                     initialValue: selectedClassroomId,
                     items: classrooms.map((c) {
                       final code = c['code'] as String?;
@@ -714,8 +806,10 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                           : '${c['name']}';
                       return DropdownMenuItem<String>(
                         value: c['id'] as String,
-                        child: Text(label,
-                            style: context.textStyles.bodyMedium),
+                        child: Text(
+                          label,
+                          style: context.textStyles.bodyMedium,
+                        ),
                       );
                     }).toList(),
                     onChanged: (val) =>
@@ -728,15 +822,16 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                       style: FilledButton.styleFrom(
                         backgroundColor: context.colors.secondary,
                         padding: const EdgeInsets.symmetric(
-                            vertical: AppSpacing.sm),
+                          vertical: AppSpacing.sm,
+                        ),
                         shape: RoundedRectangleBorder(
-                            borderRadius: AppRadius.buttonRadius),
+                          borderRadius: AppRadius.buttonRadius,
+                        ),
                       ),
                       onPressed: selectedClassroomId == null
                           ? null
                           : () async {
-                              final ok =
-                                  await ctrl.assignClassroomToTeacher(
+                              final ok = await ctrl.assignClassroomToTeacher(
                                 teacherId: teacher['id'],
                                 classroomId: selectedClassroomId!,
                               );
@@ -744,9 +839,11 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                                 Navigator.pop(ctx);
                                 ScaffoldMessenger.of(ctx).showSnackBar(
                                   SnackBar(
-                                    content: Text(ok
-                                        ? 'Staff assigned successfully'
-                                        : 'Assignment failed'),
+                                    content: Text(
+                                      ok
+                                          ? 'Staff assigned successfully'
+                                          : 'Assignment failed',
+                                    ),
                                     backgroundColor: ok
                                         ? context.colors.success
                                         : context.colors.danger,
@@ -754,8 +851,10 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                                 );
                               }
                             },
-                      child: Text('Confirm Assignment',
-                          style: context.textStyles.buttonLabel),
+                      child: Text(
+                        'Confirm Assignment',
+                        style: context.textStyles.buttonLabel,
+                      ),
                     ),
                   ),
                 ],
@@ -786,20 +885,29 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
           backgroundColor: context.colors.bgLight,
           surfaceTintColor: Colors.transparent,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(AppRadius.lg)),
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+          ),
           contentPadding: const EdgeInsets.fromLTRB(
-              AppSpacing.lg, AppSpacing.md, AppSpacing.lg, AppSpacing.lg),
+            AppSpacing.lg,
+            AppSpacing.md,
+            AppSpacing.lg,
+            AppSpacing.lg,
+          ),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 CircleAvatar(
                   radius: 32,
-                  backgroundColor:
-                      context.colors.secondary.withValues(alpha: 0.15),
-                  child: Text(initial,
-                      style: context.textStyles.heading1
-                          .copyWith(color: context.colors.secondary)),
+                  backgroundColor: context.colors.secondary.withValues(
+                    alpha: 0.15,
+                  ),
+                  child: Text(
+                    initial,
+                    style: context.textStyles.heading1.copyWith(
+                      color: context.colors.secondary,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: AppSpacing.md),
                 Text(name, style: context.textStyles.heading3),
@@ -822,41 +930,48 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                   child: Column(
                     children: [
                       _DetailRow(
-                          icon: Icons.phone_outlined,
-                          label: 'Phone',
-                          value: parent['phone'] ?? '—'),
+                        icon: Icons.phone_outlined,
+                        label: 'Phone',
+                        value: parent['phone'] ?? '—',
+                      ),
                       Divider(
-                          height: AppSpacing.lg,
-                          color: context.colors.border),
+                        height: AppSpacing.lg,
+                        color: context.colors.border,
+                      ),
                       if (parent['relationship_to_child'] != null) ...[
                         _DetailRow(
-                            icon: Icons.family_restroom,
-                            label: 'Relationship',
-                            value:
-                                parent['relationship_to_child'] as String),
+                          icon: Icons.family_restroom,
+                          label: 'Relationship',
+                          value: parent['relationship_to_child'] as String,
+                        ),
                         Divider(
-                            height: AppSpacing.lg,
-                            color: context.colors.border),
+                          height: AppSpacing.lg,
+                          color: context.colors.border,
+                        ),
                       ],
                       _DetailRow(
-                          icon: Icons.person_outline,
-                          label: 'Emergency Contact',
-                          value: parent['emergency_contact_name'] ?? '—'),
+                        icon: Icons.person_outline,
+                        label: 'Emergency Contact',
+                        value: parent['emergency_contact_name'] ?? '—',
+                      ),
                       Divider(
-                          height: AppSpacing.lg,
-                          color: context.colors.border),
+                        height: AppSpacing.lg,
+                        color: context.colors.border,
+                      ),
                       _DetailRow(
-                          icon: Icons.contact_phone_outlined,
-                          label: 'Emergency Phone',
-                          value:
-                              parent['emergency_contact_phone'] ?? '—'),
+                        icon: Icons.contact_phone_outlined,
+                        label: 'Emergency Phone',
+                        value: parent['emergency_contact_phone'] ?? '—',
+                      ),
                       Divider(
-                          height: AppSpacing.lg,
-                          color: context.colors.border),
+                        height: AppSpacing.lg,
+                        color: context.colors.border,
+                      ),
                       _DetailRow(
-                          icon: Icons.child_care_rounded,
-                          label: 'Children Enrolled',
-                          value: '$childCount'),
+                        icon: Icons.child_care_rounded,
+                        label: 'Children Enrolled',
+                        value: '$childCount',
+                      ),
                     ],
                   ),
                 ),
@@ -865,36 +980,44 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                   width: double.infinity,
                   child: OutlinedButton.icon(
                     icon: Icon(
-                        isActive
-                            ? Icons.person_off_outlined
-                            : Icons.person_add_alt_1,
-                        size: 18),
+                      isActive
+                          ? Icons.person_off_outlined
+                          : Icons.person_add_alt_1,
+                      size: 18,
+                    ),
                     style: OutlinedButton.styleFrom(
                       foregroundColor: isActive
                           ? context.colors.danger
                           : context.colors.success,
                       side: BorderSide(
-                          color: isActive
-                              ? context.colors.danger
-                              : context.colors.success),
+                        color: isActive
+                            ? context.colors.danger
+                            : context.colors.success,
+                      ),
                       padding: const EdgeInsets.symmetric(
-                          vertical: AppSpacing.sm),
+                        vertical: AppSpacing.sm,
+                      ),
                       shape: RoundedRectangleBorder(
-                          borderRadius: AppRadius.buttonRadius),
+                        borderRadius: AppRadius.buttonRadius,
+                      ),
                     ),
                     onPressed: () async {
                       final ok = await ctrl.toggleParentActive(
-                          parent['id'], isActive);
+                        parent['id'],
+                        isActive,
+                      );
                       if (ctx.mounted && ok) {
                         setDialogState(() => isActive = !isActive);
                       }
                     },
                     label: Text(
-                        isActive ? 'Deactivate Account' : 'Activate Account',
-                        style: context.textStyles.labelBold.copyWith(
-                            color: isActive
-                                ? context.colors.danger
-                                : context.colors.success)),
+                      isActive ? 'Deactivate Account' : 'Activate Account',
+                      style: context.textStyles.labelBold.copyWith(
+                        color: isActive
+                            ? context.colors.danger
+                            : context.colors.success,
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -909,9 +1032,9 @@ class _UsersTabViewState extends ConsumerState<_UsersTabView>
                   foregroundColor: context.colors.textMedium,
                   side: BorderSide(color: context.colors.border),
                   shape: RoundedRectangleBorder(
-                      borderRadius: AppRadius.buttonRadius),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: AppSpacing.sm),
+                    borderRadius: AppRadius.buttonRadius,
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: AppSpacing.sm),
                 ),
                 child: Text('Close', style: context.textStyles.labelBold),
               ),
@@ -968,7 +1091,9 @@ class _FormField extends StatelessWidget {
           borderSide: BorderSide(color: context.colors.primary, width: 2),
         ),
         contentPadding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.md, vertical: AppSpacing.sm),
+          horizontal: AppSpacing.md,
+          vertical: AppSpacing.sm,
+        ),
       ),
     );
   }
@@ -984,14 +1109,20 @@ class _StatusBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.md, vertical: 4),
+        horizontal: AppSpacing.md,
+        vertical: 4,
+      ),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(AppRadius.full),
       ),
-      child: Text(label,
-          style: context.textStyles.bodySmall
-              .copyWith(color: color, fontWeight: FontWeight.bold)),
+      child: Text(
+        label,
+        style: context.textStyles.bodySmall.copyWith(
+          color: color,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 }
@@ -1000,8 +1131,11 @@ class _DetailRow extends StatelessWidget {
   final IconData icon;
   final String label;
   final String value;
-  const _DetailRow(
-      {required this.icon, required this.label, required this.value});
+  const _DetailRow({
+    required this.icon,
+    required this.label,
+    required this.value,
+  });
 
   @override
   Widget build(BuildContext context) {

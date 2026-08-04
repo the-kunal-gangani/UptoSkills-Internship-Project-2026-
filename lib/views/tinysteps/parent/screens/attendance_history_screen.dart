@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tinysteps/Controllers/parent_attendance_controller.dart';
-import 'package:tinysteps/Views/parent/widgets/attendance_card.dart';
+import 'package:tinysteps/Views/tinysteps/parent/widgets/attendance_card.dart';
 import 'package:tinysteps/core/constants/app_theme.dart';
 import 'package:tinysteps/core/theme/theme_ext.dart';
 
