@@ -6,12 +6,12 @@ import 'package:tinysteps/core/constants/app_theme.dart';
 import 'package:tinysteps/core/theme/theme_ext.dart';
 import 'package:tinysteps/core/widgets/active_alert_dialog.dart';
 import 'package:tinysteps/core/widgets/bottom_nav_bar.dart';
-import 'package:tinysteps/views/admin/screens/admin_settings_screen.dart';
-import 'package:tinysteps/views/admin/screens/children_overview_screen.dart';
-import 'package:tinysteps/views/admin/screens/classrooms_screen.dart';
-import 'package:tinysteps/views/admin/screens/referral_codes_screen.dart';
-import 'package:tinysteps/views/admin/screens/sessions_screen.dart';
-import 'package:tinysteps/views/admin/screens/users_screen.dart';
+import 'package:tinysteps/views/tinysteps/admin/screens/admin_settings_screen.dart';
+import 'package:tinysteps/views/tinysteps/admin/screens/children_overview_screen.dart';
+import 'package:tinysteps/views/tinysteps/admin/screens/classrooms_screen.dart';
+import 'package:tinysteps/views/tinysteps/admin/screens/referral_codes_screen.dart';
+import 'package:tinysteps/views/tinysteps/admin/screens/sessions_screen.dart';
+import 'package:tinysteps/views/tinysteps/admin/screens/users_screen.dart';
 
 class AdminHomeScreen extends ConsumerStatefulWidget {
   const AdminHomeScreen({super.key});

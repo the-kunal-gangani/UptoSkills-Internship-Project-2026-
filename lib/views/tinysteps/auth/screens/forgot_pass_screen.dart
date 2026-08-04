@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:tinysteps/controllers/auth_controller.dart';
 import 'package:tinysteps/core/constants/app_theme.dart';
 import 'package:tinysteps/core/theme/theme_ext.dart';
-import 'package:tinysteps/views/auth/widgets/auth_widgets.dart';
+import 'package:tinysteps/views/tinysteps/Widgets/auth_widget.dart';
 
 class ForgotPassScreen extends ConsumerWidget {
   const ForgotPassScreen({super.key});

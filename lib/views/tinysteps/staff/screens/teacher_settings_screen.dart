@@ -5,7 +5,7 @@ import 'package:tinysteps/controllers/teacher_settings_controller.dart';
 import 'package:tinysteps/core/constants/app_theme.dart';
 import 'package:tinysteps/core/theme/theme_ext.dart';
 import 'package:tinysteps/core/widgets/logout_dialog.dart';
-import 'package:tinysteps/views/auth/screens/change_password_screen.dart';
+import 'package:tinysteps/views/tinysteps/auth/screens/change_password_screen.dart';
 
 class TeacherSettingsScreen extends ConsumerWidget {
   const TeacherSettingsScreen({super.key});

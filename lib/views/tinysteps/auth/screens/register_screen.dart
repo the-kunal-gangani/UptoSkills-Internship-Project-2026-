@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tinysteps/controllers/auth_controller.dart';
 import 'package:tinysteps/core/constants/app_theme.dart';
 import 'package:tinysteps/core/theme/theme_ext.dart';
-import 'package:tinysteps/views/auth/widgets/auth_widgets.dart';
+import 'package:tinysteps/views/tinysteps/auth/widgets/auth_widgets.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
