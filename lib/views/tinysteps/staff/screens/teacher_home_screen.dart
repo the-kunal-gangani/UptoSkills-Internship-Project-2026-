@@ -8,7 +8,7 @@ import 'package:tinysteps/core/theme/theme_ext.dart';
 import 'package:tinysteps/core/widgets/app_calendar.dart';
 import 'package:tinysteps/core/widgets/bottom_nav_bar.dart';
 import 'package:tinysteps/core/widgets/logout_dialog.dart';
-import 'package:tinysteps/Views/staff/screens/teacher_settings_screen.dart';
+import 'package:tinysteps/views/tinysteps/staff/screens/teacher_settings_screen.dart';
 
 class TeacherHomeScreen extends ConsumerStatefulWidget {
   const TeacherHomeScreen({super.key});
